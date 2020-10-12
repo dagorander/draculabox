@@ -22,10 +22,12 @@ set gdefault
 "set autoindent
 "set smartindent
 
-" VIM PLUGINS
-call plug#begin()
-Plug 'preservim/nerdtree'
-call plug#end()
+" VIM PLUGINS TODO: This is broken. Seems like not needed.
+"call plug#begin()
+"Plug 'preservim/nerdtree'
+"call plug#end()
+" TODO: Instead, add keyboard shortcut for NerdTree.
+
 
 
 " THEME
