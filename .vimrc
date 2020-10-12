@@ -22,6 +22,12 @@ set gdefault
 "set autoindent
 "set smartindent
 
+" VIM PLUGINS
+"call plug#begin()
+"Plug 'junegunn/vim-easy-align'
+"call plug#end()
+
+
 " THEME
 packadd! dracula
 syntax enable
