@@ -7,7 +7,7 @@ set title
 set encoding=utf-8
 set showcmd
 set mouse=a
-set cursorline
+"set cursorline
 
 " SEARCHING
 set hlsearch
