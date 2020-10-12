@@ -17,10 +17,10 @@ set smartcase
 set gdefault
 
 " INDENTING
-set copyindent
-set smarttab
-set autoindent
-set smartindent
+"set copyindent
+"set smarttab
+"set autoindent
+"set smartindent
 
 " THEME
 packadd! dracula
