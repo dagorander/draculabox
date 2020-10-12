@@ -23,9 +23,9 @@ set gdefault
 "set smartindent
 
 " VIM PLUGINS
-"call plug#begin()
-"Plug 'junegunn/vim-easy-align'
-"call plug#end()
+call plug#begin()
+Plug 'preservim/nerdtree'
+call plug#end()
 
 
 " THEME
