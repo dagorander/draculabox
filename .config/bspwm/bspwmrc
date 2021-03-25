@@ -4,17 +4,18 @@
 #xrandr --output HDMI-0 --auto --left-of DP-2
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/xfce-polkit/xfce-polkit &
 sxhkd &
 
 picom -f &
 
-# NOT USED BUT WERE EXEC IN I3:
-
-#nm-applet
-#xfce4-power-manager
+nm-applet &
+xfce4-power-manager & 
 #pamac-tray
-#clipit
-#blueman-applet
+#clipit &
+blueman-applet &
+
+nextcloud &
 
 bspc monitor -d I II III IV V
 #bspc monitor DP-2 -d I II III IV
@@ -23,6 +24,7 @@ bspc monitor -d I II III IV V
 
 feh --bg-fill ~/Pictures/Wallpapers/65757.jpg &
 
+# REPLACE THE BAR
 $HOME/.config/polybar/launch.sh
 
 bspc config border_width         2

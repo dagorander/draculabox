@@ -13,6 +13,10 @@ super + c
 super + s
 	steam
 
+# TODO: find key combo for Thunar?
+# super + ???
+#	thunar
+
 # pcmanfm
 
 Print
@@ -32,7 +36,7 @@ XF86AudioLowerVolume
         amixer -c 1 -- sset Master 2db-
 
 XF86AudioMute
-        amixer -c 1 -- sset Master toggle
+        amixer -q -D pulse sset Master toggle
 
 #####
 # BACKLIGHT
@@ -47,12 +51,14 @@ XF86MonBrightnessDown
 #####
 # ENVIRONMENT MANAGEMENT
 #
-super + Escape
+super + alt + Escape
 	pkill -USR1 -x sxhkd
 
+# Reload the environment
 super + alt + r
 	bspc wm -r
 
+# Rofi menu to log out/shutdown/reboot
 super + alt + q
 	~/.config/rofi/power.sh	
 
@@ -60,10 +66,12 @@ super + alt + q
 super + {_,shift + }w
 	bspc node -{c,k}
 
+# TODO: do I even want this?
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
+# TODO: I'm not sure I use this, but see about trying it out
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
@@ -80,6 +88,7 @@ super + g
 super + {t,shift + t,shift + f,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# TODO: figure out what the hell this is
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
@@ -97,7 +106,7 @@ super + {_,shift + }{h,j,k,l}
 #	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+	super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -123,20 +132,20 @@ super + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+#super + ctrl + {h,j,k,l}
+#	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+#super + ctrl + {1-9}
+#	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+#super + ctrl + space
+#	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+#super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -152,4 +161,7 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + ctrl + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
